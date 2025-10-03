@@ -1,0 +1,17 @@
+[workspace]
+authors = ["Lorenz Gaertner <lorenz.gaertner@physik.uni-muenchen.de>"]
+channels = ["conda-forge"]
+name = "knunu-reinterpretation-mini"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
+python = ">=3.13.7,<3.14"
+redistpy = ">=1.0.4,<2"
+pyhf = ">=0.7.6,<0.8"
+iminuit = ">=2.31.1,<3"
+
+[pypi-dependencies]
+eoshep = ">=1.0.17, <2"
