@@ -338,7 +338,6 @@ def fit(
         If return_result_obj=False:
             (best_fit_params, twice_nll, correlation_matrix)
     """
-    log.info("FITTING...")
     
     # Configure backend with Minuit optimizer
     pyhf.set_backend("numpy", "minuit")
