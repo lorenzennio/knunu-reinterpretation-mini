@@ -14,6 +14,8 @@ from pathlib import Path
 
 import pyhf
 
+cwd = Path(__file__).resolve().parent
+
 
 def load_likelihood_specification(filename: str = "data/combined_likelihood.json") -> dict:
     """
@@ -25,7 +27,7 @@ def load_likelihood_specification(filename: str = "data/combined_likelihood.json
     Returns:
         Dictionary containing the pyhf workspace specification
     """
-    filepath = Path(filename)
+    filepath = cwd / Path(filename)
     if not filepath.exists():
         raise FileNotFoundError(f"Likelihood file not found: {filepath}")
     
