@@ -381,7 +381,7 @@ if __name__ == '__main__':
     model_wet, data_wet, cmods_wet = make_model()
     
     # Save reinterpretable model specification
-    output_file = 'data/reinterpretation_likelihood_wet.json'
+    output_file = cwd / 'data/reinterpretation_likelihood_wet.json'
     log.info(f"Saving model to {output_file}...")
     save_model(output_file, model_wet, cmods_wet, data_wet)
     
