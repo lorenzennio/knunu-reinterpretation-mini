@@ -341,11 +341,16 @@ def fit(
     
     # Configure backend with Minuit optimizer
     pyhf.set_backend("numpy", "minuit")
+
+    fixed_params = model.config.suggested_fixed()
+    fixed_params[model.config.par_slice('cvl')] = [True]
+    fixed_params[model.config.par_slice('ctl')] = [True]
     
     # Perform maximum likelihood estimation
     best_fit, twice_nll, OptimizeResult = pyhf.infer.mle.fit(
         data,
         model,
+        fixed_params=fixed_params,
         return_uncertainties=True,
         return_fitted_val=True,
         return_result_obj=True
